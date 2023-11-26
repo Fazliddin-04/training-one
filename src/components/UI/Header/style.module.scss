@@ -1,0 +1,96 @@
+@import '../../../styles/unit.scss';
+@import '../../../styles/media.scss';
+@import '../../../styles/components.scss';
+@import '../../../styles/common.scss';
+@import '../../../styles/globals.scss';
+
+.header {
+  .links {
+    display: none;
+    align-items: center;
+    gap: rem(32);
+    .link {
+      cursor: pointer;
+      transition: 150ms;
+      &.active {
+        text-shadow: 0.5px 0 0 currentColor;
+      }
+      &:hover {
+        text-shadow: 0.5px 0 0 currentColor;
+      }
+    }
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    &:last-of-type {
+      gap: 0;
+    }
+  }
+  .langs {
+    display: none;
+  }
+  .logo {
+    position: relative;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $primary-color;
+  }
+  .addressButton {
+    display: none;
+    p.address {
+      color: $primary-color;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  @include media($lg) {
+    .links {
+      display: flex;
+    }
+    .addressButton {
+      display: flex;
+      cursor: pointer;
+      gap: rem(8);
+      font-size: rem(14);
+      transition: 300ms;
+      div.icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: rem(6);
+        border-radius: 50%;
+        color: $primary-color;
+        background-color: $secondary-color;
+        & + div {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0;
+        }
+      }
+      p {
+        font-size: rem(13);
+        max-width: rem(230);
+        &.address {
+          font-size: rem(13);
+        }
+      }
+    }
+    .wrapper {
+      gap: rem(40);
+      &:last-of-type {
+        gap: rem(32);
+      }
+    }
+    .langs {
+      @include nav_item;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import '../../../styles/unit.scss';
+@import '../../../styles/media.scss';
+@import '../../../styles/globals.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  color: #fff;
+  padding: rem(10) rem(20);
+  border-radius: rem(20);
+  font-size: rem(14);
+  width: 100%;
+  font-weight: 500;
+  transition: 150ms ease;
+  white-space: nowrap;
+  line-height: rem(20);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.95;
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+  &.secondary {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    background: $lightgray;
+    color: $text-light;
+  }
+  &.grayscale {
+    background: $lightgray-4;
+    color: $darkgray-2;
+    &_hover {
+      background: transparent;
+      color: $darkgray-2;
+      &:hover {
+        background: $lightgray-4;
+      }
+    }
+  }
+  &.sm {
+    padding-top: rem(6);
+    padding-bottom: rem(6);
+    border-radius: rem(16);
+    height: auto;
+    width: 100%;
+    &.active {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+  @include media($lg) {
+    width: fit-content;
+    &.sm {
+      padding-left: rem(16);
+      padding-right: rem(16);
+    }
+  }
+}

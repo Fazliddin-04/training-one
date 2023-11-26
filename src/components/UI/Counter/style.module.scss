@@ -1,0 +1,38 @@
+@import '../../../styles/unit.scss';
+@import '../../../styles/media.scss';
+@import '../../../styles/globals.scss';
+
+.counter {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid $primary-color;
+  border-radius: rem(20);
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  height: rem(36);
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media($lg) {
+      flex: 1;
+    }
+  }
+  .count {
+    font-weight: 600;
+  }
+  .button {
+    flex: 1;
+    appearance: none;
+    background: none;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    @include media($lg) {
+      padding: 0 14px;
+    }
+  }
+}
